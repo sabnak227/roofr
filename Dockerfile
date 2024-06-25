@@ -7,7 +7,7 @@ COPY --chown=www-data:www-data --chmod=755 src/myapp /var/www/html
 ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
 
 RUN chmod +x /usr/local/bin/install-php-extensions && sync && \
-    install-php-extensions opcache pgsql pdo_pgsql redis
+    install-php-extensions opcache pgsql pdo_pgsql redis xdebug
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
 
